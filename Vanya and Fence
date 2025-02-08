@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n,h;
+cin>>n>>h;
+int arr2[n];  
+    for (int i = 0; i < n; i++) {
+        cin >> arr2[i];  
+    }
+int num=0;
+for(int i=0;i<n;i++){
+    if(arr2[i]<=h)
+        num+=1;
+    else
+        num+=2;
+}
+cout<<num;
+    return 0;
+}
