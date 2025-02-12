@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;  
+    cin >> n;
+
+    int cards[1000];  
+    for (int i = 0; i < n; ++i) {
+        cin >> cards[i];  
+    }
+
+    int left = 0, right = n - 1;  
+    int s_points = 0, d_points = 0;  
+    
+    bool sereja_turn = true;  
+
+    while (left <= right) {
+        
+        if (sereja_turn) {
+            if (cards[left] > cards[right]) {
+                s_points += cards[left];
+                left++;
+            } else {
+                s_points += cards[right];
+                right--;
+            }
+        } else { 
+            if (cards[left] > cards[right]) {
+                d_points += cards[left];
+                left++;
+            } else {
+                d_points += cards[right];
+                right--;
+            }
+        }
+
+        
+        sereja_turn = !sereja_turn;
+    }
+
+    
+    cout << s_points << " " << d_points << endl;
+
+    return 0;
+}
