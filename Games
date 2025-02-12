@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    vector<pair<int, int>> teams(n);  // Store pairs of home and guest uniforms for each team
+
+    // Read the uniform colors
+    for (int i = 0; i < n; i++) {
+        cin >> teams[i].first >> teams[i].second;  // home and guest uniform
+    }
+
+    int count = 0;
+
+    // Compare each pair of teams
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i != j) {  // Ensure that i is not the same as j (no team plays against itself)
+                if (teams[i].first == teams[j].second) {  // Host's home uniform matches guest's guest uniform
+                    count++;
+                }
+            }
+        }
+    }
+
+    // Output the result
+    cout << count << endl;
+
+    return 0;
+}
