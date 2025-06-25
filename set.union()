@@ -1,0 +1,11 @@
+#hackerank
+num_1 = int(input())
+x= list(map(int,input().split()))
+num_2=int(input())
+y= list(map(int,input().split()))
+
+for i in range(num_2):
+    x.append(y[i])
+    
+print(len(set(x)))
+    
