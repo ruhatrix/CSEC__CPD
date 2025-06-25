@@ -1,0 +1,10 @@
+#geekforgeek
+class Solution:    
+    def findUnion(self, a, b):
+        num =[]
+        for i in range(len(a)):
+          num.append(a[i]) 
+        for i in range(len(b)):
+          num.append(b[i])
+        
+        return len(set(num))
