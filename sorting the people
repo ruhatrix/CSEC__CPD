@@ -1,0 +1,12 @@
+class Solution:
+    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
+        combined = list(zip(heights, names))
+        combined.sort()
+        combined.reverse()
+        new_name = []
+
+        for i in combined:
+            height, name = i
+            new_name.append(name)
+
+        return new_name
