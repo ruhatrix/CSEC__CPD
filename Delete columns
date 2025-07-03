@@ -1,0 +1,15 @@
+class Solution:
+    def minDeletionSize(self, strs: List[str]) -> int:
+        size = []
+
+        for i in range(len(strs[0])):       
+            col = ""
+            for j in range(len(strs)):      
+                col += strs[j][i]
+            size.append(col)
+        line=0
+        for i in range(len(size)):
+                h="".join(sorted(size[i]))
+                if  h !=size[i]:
+                    line+=1
+        return line
