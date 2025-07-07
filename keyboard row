@@ -1,0 +1,13 @@
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        q = "qwertyuiop"
+        s = "asdfghjkl"
+        v = "zxcvbnm"
+        new_list = []
+
+        for word in words:
+            lower_word = word.lower() 
+            if all(char in q for char in lower_word) or all(char in s for char in lower_word) or all(char in v for char in lower_word):
+                new_list.append(word)  
+
+        return new_list
