@@ -1,0 +1,35 @@
+class Solution:
+    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+        losses = {}
+
+        players = set()
+
+        for match in matches:
+            winner = match[0]
+            loser = match[1]
+
+            players.add(winner)
+            players.add(loser)
+
+            
+            if loser in losses:
+                losses[loser] += 1
+            else:
+                losses[loser] = 1
+
+
+        zero_loss_players = []
+        one_loss_players = []
+
+        for player in players:
+            if player not in losses:
+                zero_loss_players.append(player)
+            elif losses[player] == 1:
+                one_loss_players.append(player)
+
+
+            zero_loss_players.sort()
+            one_loss_players.sort()
+
+            answer = [zero_loss_players, one_loss_players]
+        return answer
